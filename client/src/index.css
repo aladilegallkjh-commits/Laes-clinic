@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -27,210 +28,118 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-cream: var(--cream);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Dancing Script", cursive;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
-  /* LAES Clinic - Wellness Elegance Color Palette */
-  --primary: oklch(0.35 0.08 160); /* Verde escuro #2D4F3F */
-  --primary-foreground: oklch(0.98 0.001 0);
-  --sidebar-primary: oklch(0.35 0.08 160);
-  --sidebar-primary-foreground: oklch(0.98 0.001 0);
-  --accent: oklch(0.62 0.12 70); /* Dourado #C9A961 */
-  --accent-foreground: oklch(0.98 0.001 0);
-  --chart-1: oklch(0.35 0.08 160);
-  --chart-2: oklch(0.62 0.12 70);
-  --chart-3: oklch(0.45 0.08 160);
-  --chart-4: oklch(0.55 0.08 160);
-  --chart-5: oklch(0.65 0.08 160);
-  --radius: 0.75rem;
-  --background: oklch(0.98 0.001 80); /* Bege claro */
-  --foreground: oklch(0.2 0.01 65); /* Charcoal */
-  --card: oklch(1 0 0); /* Branco puro */
-  --card-foreground: oklch(0.2 0.01 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.01 65);
-  --secondary: oklch(0.95 0.002 80);
-  --secondary-foreground: oklch(0.35 0.08 160);
-  --muted: oklch(0.9 0.002 80);
-  --muted-foreground: oklch(0.5 0.01 65);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 80);
-  --input: oklch(0.95 0.002 80);
-  --ring: oklch(0.62 0.12 70);
-  --sidebar: oklch(0.98 0.001 80);
-  --sidebar-foreground: oklch(0.2 0.01 65);
-  --sidebar-accent: oklch(0.62 0.12 70);
-  --sidebar-accent-foreground: oklch(0.98 0.001 0);
-  --sidebar-border: oklch(0.92 0.004 80);
-  --sidebar-ring: oklch(0.62 0.12 70);
+  --radius: 0.5rem;
+  --cream: oklch(0.975 0.015 90);
+  --background: oklch(0.975 0.015 90);
+  --foreground: oklch(0.28 0.05 155);
+  --card: oklch(0.985 0.01 90);
+  --card-foreground: oklch(0.28 0.05 155);
+  --popover: oklch(0.985 0.01 90);
+  --popover-foreground: oklch(0.28 0.05 155);
+  --primary: oklch(0.32 0.055 155);
+  --primary-foreground: oklch(0.975 0.015 90);
+  --secondary: oklch(0.94 0.02 90);
+  --secondary-foreground: oklch(0.32 0.055 155);
+  --muted: oklch(0.94 0.02 90);
+  --muted-foreground: oklch(0.5 0.03 140);
+  --accent: oklch(0.75 0.09 85);
+  --accent-foreground: oklch(0.28 0.05 155);
+  --gold: oklch(0.72 0.11 82);
+  --gold-soft: oklch(0.82 0.07 85);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0.02 90);
+  --input: oklch(0.88 0.02 90);
+  --ring: oklch(0.72 0.11 82);
 }
 
-.dark {
-  --primary: oklch(0.35 0.08 160);
-  --primary-foreground: oklch(0.98 0.001 0);
-  --sidebar-primary: oklch(0.35 0.08 160);
-  --sidebar-primary-foreground: oklch(0.98 0.001 0);
-  --background: oklch(0.15 0.01 65);
-  --foreground: oklch(0.95 0.002 80);
-  --card: oklch(0.22 0.01 65);
-  --card-foreground: oklch(0.95 0.002 80);
-  --popover: oklch(0.22 0.01 65);
-  --popover-foreground: oklch(0.95 0.002 80);
-  --secondary: oklch(0.28 0.01 160);
-  --secondary-foreground: oklch(0.9 0.002 80);
-  --muted: oklch(0.35 0.01 160);
-  --muted-foreground: oklch(0.7 0.01 80);
-  --accent: oklch(0.62 0.12 70);
-  --accent-foreground: oklch(0.15 0.01 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.62 0.12 70);
-  --chart-1: oklch(0.35 0.08 160);
-  --chart-2: oklch(0.62 0.12 70);
-  --chart-3: oklch(0.45 0.08 160);
-  --chart-4: oklch(0.55 0.08 160);
-  --chart-5: oklch(0.65 0.08 160);
-  --sidebar: oklch(0.22 0.01 65);
-  --sidebar-foreground: oklch(0.95 0.002 80);
-  --sidebar-accent: oklch(0.62 0.12 70);
-  --sidebar-accent-foreground: oklch(0.15 0.01 65);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.62 0.12 70);
+@theme {
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.6s linear infinite;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-rise: rise 0.7s ease-out both;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(2deg); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@utility gold-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--gold) 0%,
+    var(--gold-soft) 30%,
+    color-mix(in oklab, var(--gold) 60%, white) 50%,
+    var(--gold-soft) 70%,
+    var(--gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+@utility card-lift {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease;
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px -24px color-mix(in oklab, var(--primary) 45%, transparent);
+  }
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--cream) 65%, transparent);
+  backdrop-filter: blur(14px);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
-  h1 {
-    @apply text-5xl;
-  }
-  h2 {
-    @apply text-4xl;
-  }
-  h3 {
-    @apply text-2xl;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
+  ::selection {
+    background: var(--gold);
+    color: var(--primary);
   }
 }
 
-@layer components {
-  /* Animation utilities */
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes scale-in {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out;
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out;
-  }
-
-  .animate-scale-in {
-    animation: scale-in 0.3s ease-out;
-  }
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
-  }
-}
