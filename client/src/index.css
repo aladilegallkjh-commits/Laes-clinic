@@ -38,8 +38,8 @@
 
 :root {
   --radius: 0.5rem;
-  --cream: oklch(0.965 0.025 90); /* Warmer cream */
-  --background: oklch(0.965 0.025 90); /* Warmer cream background */
+  --cream: oklch(0.94 0.04 90); /* Stronger beige/cream */
+  --background: oklch(0.94 0.04 90); /* Stronger beige/cream background */
   --foreground: oklch(0.28 0.05 155);
   --card: oklch(0.985 0.01 90); /* Keeping cards slightly lighter for contrast */
   --card-foreground: oklch(0.28 0.05 155);
