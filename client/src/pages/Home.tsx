@@ -5,7 +5,7 @@ import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroImage from "@/assets/hero-woman.jpg";
 import clinicImage from "@/assets/clinic-interior.jpg";
-import logoMark from "@/assets/nova-logo.jpeg";
+import logoMark from "@/assets/logo-new-wai.png";
 import { Reveal } from "@/components/Reveal";
 import {
   MapPin,
