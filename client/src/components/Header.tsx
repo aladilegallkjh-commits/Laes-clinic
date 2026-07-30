@@ -11,7 +11,7 @@ export default function Header() {
     { label: "Tratamentos", href: "#tratamentos" },
     { label: "Tecnologias", href: "#tecnologias" },
     { label: "Resultados", href: "#resultados" },
-    { label: "Blog", href: "#blog" },
+
     { label: "Contato", href: "#contato" },
   ];
 
