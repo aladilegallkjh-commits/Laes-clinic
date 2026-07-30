@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroImage from "@/assets/hero-woman.jpg";
-import clinicImage from "@/assets/clinic-interior.jpg";
+import clinicImage from "@/assets/doutora/doutora-1.jpeg";
 import logoMark from "@/assets/logo-mark.png";
 
 import res1 from "@/assets/resultados/res-1.jpeg";
