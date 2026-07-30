@@ -1,7 +1,8 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import heroImage from "@/assets/hero-woman.jpg";
 import clinicImage from "@/assets/clinic-interior.jpg";
 import logoMark from "@/assets/logo-mark.png";
@@ -267,6 +268,66 @@ function CtaButton({
       <span className="relative z-10 flex items-center gap-2">{children}</span>
       <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cream/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
     </a>
+  );
+}
+
+/* ---------------------------------- components ------------------------------- */
+
+function ResultsCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    slidesToScroll: 1,
+    breakpoints: {
+      "(min-width: 640px)": { slidesToScroll: 2 },
+      "(min-width: 1024px)": { slidesToScroll: 3 }
+    }
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  // We have 3 slots initially as requested by the user, ready for more
+  const slots = [1, 2, 3];
+
+  return (
+    <div className="relative mt-14 px-4 sm:px-12">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex -ml-4">
+          {slots.map((s, i) => (
+            <div key={i} className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
+              <Reveal delay={i * 80}>
+                <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
+                  {/* <img src="..." alt={`Resultado ${s}`} className="h-full w-full object-cover" /> */}
+                  <span className="opacity-40">Foto em breve</span>
+                </div>
+              </Reveal>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button
+        onClick={scrollPrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-cream text-primary shadow-lg ring-1 ring-gold/40 transition-transform hover:scale-110 active:scale-95 disabled:opacity-50 sm:-left-4"
+        aria-label="Anterior"
+      >
+        <ArrowRight className="h-5 w-5 rotate-180" />
+      </button>
+      
+      <button
+        onClick={scrollNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-cream text-primary shadow-lg ring-1 ring-gold/40 transition-transform hover:scale-110 active:scale-95 disabled:opacity-50 sm:-right-4"
+        aria-label="Próximo"
+      >
+        <ArrowRight className="h-5 w-5" />
+      </button>
+    </div>
   );
 }
 
@@ -647,51 +708,8 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          {/* Galeria de fotos — aguardando imagens do PDF */}
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {/* IMAGEM 1 */}
-            <Reveal delay={0}>
-              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
-                {/* <img src="..." alt="Resultado 1" className="h-full w-full object-cover" /> */}
-                <span className="opacity-40">Foto em breve</span>
-              </div>
-            </Reveal>
-            {/* IMAGEM 2 */}
-            <Reveal delay={80}>
-              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
-                {/* <img src="..." alt="Resultado 2" className="h-full w-full object-cover" /> */}
-                <span className="opacity-40">Foto em breve</span>
-              </div>
-            </Reveal>
-            {/* IMAGEM 3 */}
-            <Reveal delay={160}>
-              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
-                {/* <img src="..." alt="Resultado 3" className="h-full w-full object-cover" /> */}
-                <span className="opacity-40">Foto em breve</span>
-              </div>
-            </Reveal>
-            {/* IMAGEM 4 */}
-            <Reveal delay={240}>
-              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
-                {/* <img src="..." alt="Resultado 4" className="h-full w-full object-cover" /> */}
-                <span className="opacity-40">Foto em breve</span>
-              </div>
-            </Reveal>
-            {/* IMAGEM 5 */}
-            <Reveal delay={320}>
-              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
-                {/* <img src="..." alt="Resultado 5" className="h-full w-full object-cover" /> */}
-                <span className="opacity-40">Foto em breve</span>
-              </div>
-            </Reveal>
-            {/* IMAGEM 6 */}
-            <Reveal delay={400}>
-              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
-                {/* <img src="..." alt="Resultado 6" className="h-full w-full object-cover" /> */}
-                <span className="opacity-40">Foto em breve</span>
-              </div>
-            </Reveal>
-          </div>
+          {/* Carrossel de fotos — aguardando imagens do PDF */}
+          <ResultsCarousel />
         </div>
       </section>
 
