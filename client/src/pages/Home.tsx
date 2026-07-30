@@ -686,39 +686,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog */}
-      <section id="blog" className="py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <Reveal className="text-center">
-            <SectionLabel>Blog</SectionLabel>
-            <h2 className="mx-auto max-w-2xl font-serif text-3xl text-primary sm:text-4xl">
-              Conteúdo para cuidar de você todos os dias.
-            </h2>
-          </Reveal>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {posts.map((p, i) => (
-              <Reveal key={p.title} delay={i * 100}>
-                <a
-                  href="#blog"
-                  className="card-lift group flex h-full flex-col rounded-3xl glass-card p-7"
-                >
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-gold">
-                    {p.category}
-                  </span>
-                  <h3 className="mt-3 font-serif text-2xl leading-snug text-primary transition-colors group-hover:text-gold">
-                    {p.title}
-                  </h3>
-                  <div className="mt-auto flex items-center gap-2 pt-6 text-[11px] text-muted-foreground">
-                    <CalendarDays className="h-3.5 w-3.5 text-gold" /> {p.date}
-                    <ArrowRight className="ml-auto h-4 w-4 text-gold transition-transform group-hover:translate-x-1" />
-                  </div>
-                </a>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section id="contato" className="relative overflow-hidden py-20">
