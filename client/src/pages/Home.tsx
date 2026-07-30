@@ -419,12 +419,6 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -left-10 top-24 opacity-25">
-          <Leaf className="h-40 w-40 animate-float-slow text-primary/40" strokeWidth={1} />
-        </div>
-        <div className="pointer-events-none absolute right-6 top-6 opacity-20">
-          <Leaf className="h-24 w-24 -rotate-45 animate-float text-primary/40" strokeWidth={1} />
-        </div>
         <div className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-gold-soft/25 blur-3xl" />
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:py-24">
