@@ -209,7 +209,14 @@ const marquee = [
   "Cuidado Integrativo",
 ];
 
-const WHATSAPP = "https://wa.me/5541984221384";
+const PHONE = "5541984221384";
+const DEFAULT_MSG = encodeURIComponent("Olá, Dra. Edilene! Vim pelo site e gostaria de agendar uma consulta. 😊");
+const WHATSAPP = `https://wa.me/${PHONE}?text=${DEFAULT_MSG}`;
+
+function whatsappLink(treatment: string) {
+  const msg = encodeURIComponent(`Olá, Dra. Edilene! Vim pelo site e tenho interesse no tratamento de *${treatment}*. Gostaria de agendar uma consulta. 😊`);
+  return `https://wa.me/${PHONE}?text=${msg}`;
+}
 
 /* ------------------------------------ ui ------------------------------------- */
 
@@ -646,7 +653,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visibleTreatments.map((t, i) => (
               <Reveal key={t.title} delay={i * 80}>
-                <article className="card-lift group h-full glass-card rounded-3xl p-7 text-center">
+                <article className="card-lift group h-full glass-card rounded-3xl p-7 text-center flex flex-col">
                   <div className="mx-auto mb-5 grid h-20 w-20 place-items-center rounded-full bg-primary text-gold shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
                     <t.icon className="h-9 w-9" strokeWidth={1.4} />
                   </div>
@@ -655,12 +662,18 @@ export default function Home() {
                     {t.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{t.desc}</p>
-                  <div className="mt-6 flex items-center justify-center gap-4 border-t border-white/30 pt-4 text-[11px] text-muted-foreground">
-                    <span className="flex items-center gap-1.5">
+                  <div className="mt-6 border-t border-white/30 pt-4 text-[11px] text-muted-foreground">
+                    <span className="flex items-center justify-center gap-1.5 mb-3">
                       <Clock className="h-3.5 w-3.5 text-gold" /> {t.duration}
                     </span>
-                    <span className="h-3 w-px bg-border" />
-                    <span className="font-medium text-primary">{t.price}</span>
+                    <a
+                      href={whatsappLink(t.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-gold/50 px-4 py-1.5 text-[10px] uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                    >
+                      Agendar este tratamento
+                    </a>
                   </div>
                 </article>
               </Reveal>
