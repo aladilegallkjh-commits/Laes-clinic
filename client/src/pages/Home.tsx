@@ -484,19 +484,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-14">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 md:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 90} from="scale">
-              <div className="card-lift glass-card rounded-2xl px-4 py-7 text-center">
-                <div className="font-serif text-4xl text-primary">{s.value}</div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                  {s.label}
-                </div>
-              </div>
-            </Reveal>
-          ))}
+      {/* About */}
+      <section
+        id="sobre"
+        className="relative overflow-hidden glass-primary py-20 text-primary-foreground"
+      >
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
+          <Reveal from="left">
+            <div className="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-gold">
+              Sobre a Clínica <span className="h-px w-12 bg-gold/60" />
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl">
+              Mais que estética,
+              <br />é sobre você.
+            </h2>
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/80">
+              Na LAES Clinic, unimos ciência, tecnologia e um olhar integrativo para oferecer
+              tratamentos faciais e corporais personalizados que valorizam a sua beleza única.
+            </p>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/80">
+              Nosso compromisso é cuidar de você por inteiro, de dentro para fora.
+            </p>
+
+            <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+              {values.map((v, i) => (
+                <Reveal key={v.label} delay={i * 100} from="scale">
+                  <div className="group flex flex-col items-center text-center">
+                    <v.icon
+                      className="mb-2 h-7 w-7 text-gold transition-transform duration-500 group-hover:scale-125"
+                      strokeWidth={1.4}
+                    />
+                    <span className="text-[10px] uppercase tracking-widest text-cream/80">
+                      {v.label}
+                    </span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <CtaButton href="#contato" variant="gold" className="mt-10">
+              CONHEÇA A DRA. EDILENE LOPES
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </CtaButton>
+          </Reveal>
+
+          <Reveal from="right" delay={120}>
+            <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-8 border-primary shadow-2xl ring-1 ring-gold/40 transition-transform duration-700 hover:scale-[1.02] lg:max-w-lg">
+              <img
+                src={clinicImage}
+                alt="Recepção da LAES Clinic em Curitiba"
+                className="h-full w-full object-cover"
+                loading="lazy"
+                width={1024}
+                height={900}
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -592,64 +635,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <section
-        id="sobre"
-        className="relative overflow-hidden glass-primary py-20 text-primary-foreground"
-      >
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
-          <Reveal from="left">
-            <div className="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-gold">
-              Sobre a Clínica <span className="h-px w-12 bg-gold/60" />
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl">
-              Mais que estética,
-              <br />é sobre você.
-            </h2>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/80">
-              Na LAES Clinic, unimos ciência, tecnologia e um olhar integrativo para oferecer
-              tratamentos faciais e corporais personalizados que valorizam a sua beleza única.
-            </p>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/80">
-              Nosso compromisso é cuidar de você por inteiro, de dentro para fora.
-            </p>
 
-            <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
-              {values.map((v, i) => (
-                <Reveal key={v.label} delay={i * 100} from="scale">
-                  <div className="group flex flex-col items-center text-center">
-                    <v.icon
-                      className="mb-2 h-7 w-7 text-gold transition-transform duration-500 group-hover:scale-125"
-                      strokeWidth={1.4}
-                    />
-                    <span className="text-[10px] uppercase tracking-widest text-cream/80">
-                      {v.label}
-                    </span>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <CtaButton href="#contato" variant="gold" className="mt-10">
-              CONHEÇA A DRA. EDILENE LOPES
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </CtaButton>
-          </Reveal>
-
-          <Reveal from="right" delay={120}>
-            <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-8 border-primary shadow-2xl ring-1 ring-gold/40 transition-transform duration-700 hover:scale-[1.02] lg:max-w-lg">
-              <img
-                src={clinicImage}
-                alt="Recepção da LAES Clinic em Curitiba"
-                className="h-full w-full object-cover"
-                loading="lazy"
-                width={1024}
-                height={900}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* Results */}
       <section id="resultados" className="py-20">
