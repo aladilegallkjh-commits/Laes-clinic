@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import heroImage from "@/assets/hero-woman.jpg";
+import heroImage from "@/assets/procedimentos/proc-1.jpeg";
 import clinicImage from "@/assets/clinic-interior.jpg";
 import logoMark from "@/assets/logo-mark.png";
 
