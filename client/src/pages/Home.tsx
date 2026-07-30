@@ -564,9 +564,6 @@ export default function Home() {
 
       {/* Technologies */}
       <section id="tecnologias" className="relative overflow-hidden py-20">
-        <div className="pointer-events-none absolute -right-10 top-10 opacity-20">
-          <Leaf className="h-52 w-52 animate-float-slow text-primary/30" strokeWidth={1} />
-        </div>
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="text-center">
             <SectionLabel>Tecnologias</SectionLabel>
@@ -600,12 +597,6 @@ export default function Home() {
         id="sobre"
         className="relative overflow-hidden bg-primary py-20 text-primary-foreground"
       >
-        <div className="pointer-events-none absolute -left-8 top-10 opacity-20">
-          <Leaf className="h-40 w-40 animate-float-slow text-gold" strokeWidth={1} />
-        </div>
-        <div className="pointer-events-none absolute -right-8 bottom-10 opacity-20">
-          <Leaf className="h-40 w-40 rotate-180 animate-float text-gold" strokeWidth={1} />
-        </div>
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
           <Reveal from="left">
             <div className="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-gold">
@@ -769,12 +760,6 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="relative overflow-hidden bg-primary py-16 text-cream">
-        <div className="pointer-events-none absolute -left-6 top-10 opacity-15">
-          <Leaf className="h-32 w-32 animate-float-slow text-gold" strokeWidth={1} />
-        </div>
-        <div className="pointer-events-none absolute -right-6 bottom-10 opacity-15">
-          <Leaf className="h-32 w-32 rotate-180 animate-float text-gold" strokeWidth={1} />
-        </div>
         <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Logo light />
