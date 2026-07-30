@@ -280,7 +280,7 @@ function CtaButton({
       "bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5",
     outline:
       "border border-primary/40 text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5",
-    gold: "border border-gold/60 text-cream hover:bg-gold hover:text-primary hover:-translate-y-0.5",
+    gold: "border-2 border-gold/60 text-cream hover:bg-gold hover:text-primary hover:-translate-y-0.5",
   }[variant];
 
   return (
@@ -333,7 +333,7 @@ function ResultsCarousel() {
 
       <button
         onClick={scrollPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-cream text-primary shadow-lg ring-1 ring-gold/40 transition-transform hover:scale-110 active:scale-95 disabled:opacity-50 sm:-left-4"
+        className="absolute left-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-cream text-primary shadow-lg ring-2 ring-gold/60 transition-transform hover:scale-110 active:scale-95 disabled:opacity-50 sm:-left-4"
         aria-label="Anterior"
       >
         <ArrowRight className="h-5 w-5 rotate-180" />
@@ -341,7 +341,7 @@ function ResultsCarousel() {
       
       <button
         onClick={scrollNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-cream text-primary shadow-lg ring-1 ring-gold/40 transition-transform hover:scale-110 active:scale-95 disabled:opacity-50 sm:-right-4"
+        className="absolute right-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-cream text-primary shadow-lg ring-2 ring-gold/60 transition-transform hover:scale-110 active:scale-95 disabled:opacity-50 sm:-right-4"
         aria-label="Próximo"
       >
         <ArrowRight className="h-5 w-5" />
@@ -540,7 +540,7 @@ export default function Home() {
                 height={1024}
               />
             </div>
-            <div className="absolute -bottom-3 right-0 flex h-28 w-28 animate-float flex-col items-center justify-center rounded-full border border-gold/60 bg-cream p-3 text-center text-[9px] uppercase leading-tight tracking-widest text-primary shadow-xl sm:h-32 sm:w-32 sm:text-[10px] md:right-4">
+            <div className="absolute -bottom-3 right-0 flex h-28 w-28 animate-float flex-col items-center justify-center rounded-full border-2 border-gold/60 bg-cream p-3 text-center text-[9px] uppercase leading-tight tracking-widest text-primary shadow-xl sm:h-32 sm:w-32 sm:text-[10px] md:right-4">
               <Leaf className="mb-1 h-4 w-4 text-gold" />
               Beleza que vem de dentro, reflete por fora.
             </div>
@@ -607,7 +607,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal from="right" delay={120}>
-            <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-8 border-primary shadow-2xl ring-1 ring-gold/40 transition-transform duration-700 hover:scale-[1.02] lg:max-w-lg">
+            <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-[10px] border-primary shadow-2xl ring-4 ring-gold/60 transition-transform duration-700 hover:scale-[1.02] lg:max-w-lg">
               <img
                 src={clinicImage}
                 alt="Recepção da LAES Clinic em Curitiba"
@@ -689,7 +689,7 @@ export default function Home() {
                       href={whatsappLink(t.title)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-gold/50 px-4 py-1.5 text-[10px] uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                      className="inline-flex items-center gap-2 rounded-full border-2 border-gold/60 px-4 py-1.5 text-[10px] uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-primary-foreground"
                     >
                       Agendar este tratamento
                     </a>
@@ -744,7 +744,7 @@ export default function Home() {
       <section id="contato" className="relative overflow-hidden py-20">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-soft/20 blur-3xl" />
         <Reveal className="relative mx-auto max-w-3xl px-6 text-center" from="scale">
-          <div className="mx-auto mb-6 grid h-16 w-16 animate-float place-items-center rounded-full border border-gold/50 glass">
+          <div className="mx-auto mb-6 grid h-16 w-16 animate-float place-items-center rounded-full border-2 border-gold/60 glass">
             <Leaf className="h-6 w-6 text-gold" />
           </div>
           <div className="mx-auto max-w-2xl rounded-3xl glass-strong p-10">

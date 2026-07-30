@@ -109,9 +109,11 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <p className="text-sm text-white/70 text-center md:text-right">
-              © 2024 LAES Clinic. Todos os direitos reservados.
-            </p>
+            <div className="text-sm text-white/70 text-center md:text-right flex flex-col md:flex-row items-center md:gap-2">
+              <span>© 2024 LAES Clinic. Todos os direitos reservados.</span>
+              <span className="hidden md:inline">|</span>
+              <a href="/admin" className="hover:text-accent transition-colors mt-2 md:mt-0">Painel Admin</a>
+            </div>
           </div>
         </div>
       </div>

@@ -22,8 +22,24 @@ export default function AdminGallery() {
   const deleteGalleryMutation = trpc.admin.gallery.delete.useMutation();
 
   if (loading) return <div className="flex items-center justify-center h-screen">Carregando...</div>;
-  if (!user || user.role !== "admin") return <div className="flex items-center justify-center h-screen">Acesso negado</div>;
-
+  if (!user || user.role !== "admin") {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen bg-gray-50 p-4">
+        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center border border-gray-100">
+          <h2 className="text-2xl font-bold mb-2 text-primary">Acesso Restrito</h2>
+          <p className="text-gray-600 mb-8">Faça login com sua conta de administrador para acessar a galeria.</p>
+          <Button 
+            onClick={() => {
+              import('@/const').then(m => m.startLogin());
+            }} 
+            className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6"
+          >
+            Fazer Login
+          </Button>
+        </div>
+      </div>
+    );
+  }
   const handleAddGallery = async () => {
     if (!beforeImage || !afterImage) {
       toast.error("Adicione as imagens antes e depois");
