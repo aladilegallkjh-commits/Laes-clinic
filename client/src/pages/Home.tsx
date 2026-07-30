@@ -415,7 +415,7 @@ export default function Home() {
             </span>
           </div>
           <div className="flex shrink-0 items-center gap-3 text-gold">
-            <a href="#" aria-label="Instagram" className="transition-transform hover:scale-125">
+            <a href="https://www.instagram.com/edilenelopes52?igsh=MWY5d2NkdW5ibWR0OA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-transform hover:scale-125">
               <Instagram className="h-4 w-4" />
             </a>
             <a href={WHATSAPP} aria-label="WhatsApp" className="transition-transform hover:scale-125">
@@ -759,7 +759,7 @@ export default function Home() {
               <br /> todos os dias.
             </p>
             <div className="mt-4 flex gap-3 text-gold">
-              <a href="#" aria-label="Instagram" className="transition-transform hover:scale-125">
+              <a href="https://www.instagram.com/edilenelopes52?igsh=MWY5d2NkdW5ibWR0OA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-transform hover:scale-125">
                 <Instagram className="h-5 w-5" />
               </a>
               <a

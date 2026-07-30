@@ -91,7 +91,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/edilenelopes52?igsh=MWY5d2NkdW5ibWR0OA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-accent transition-colors flex items-center justify-center"
