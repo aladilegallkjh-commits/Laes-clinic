@@ -647,41 +647,50 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {results.map((r, i) => (
-              <Reveal key={r.name} delay={i * 100}>
-                <div className="card-lift h-full glass-card rounded-3xl p-8">
-                  <div className="gold-text font-serif text-4xl">{r.metric}</div>
-                  <h3 className="mt-4 font-sans text-xs font-semibold uppercase tracking-widest text-primary">
-                    {r.name}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{r.detail}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* Testimonials */}
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 110} from="up">
-                <figure className="card-lift relative h-full rounded-3xl glass-card p-8">
-                  <Quote className="absolute right-6 top-6 h-8 w-8 text-gold/30" />
-                  <div className="mb-4 flex gap-1">
-                    {Array.from({ length: 5 }).map((_, s) => (
-                      <Star key={s} className="h-3.5 w-3.5 fill-gold text-gold" />
-                    ))}
-                  </div>
-                  <blockquote className="text-sm leading-relaxed text-muted-foreground">
-                    "{t.text}"
-                  </blockquote>
-                  <figcaption className="mt-6">
-                    <div className="font-serif text-lg text-primary">{t.name}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-gold">{t.role}</div>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
+          {/* Galeria de fotos — aguardando imagens do PDF */}
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {/* IMAGEM 1 */}
+            <Reveal delay={0}>
+              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
+                {/* <img src="..." alt="Resultado 1" className="h-full w-full object-cover" /> */}
+                <span className="opacity-40">Foto em breve</span>
+              </div>
+            </Reveal>
+            {/* IMAGEM 2 */}
+            <Reveal delay={80}>
+              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
+                {/* <img src="..." alt="Resultado 2" className="h-full w-full object-cover" /> */}
+                <span className="opacity-40">Foto em breve</span>
+              </div>
+            </Reveal>
+            {/* IMAGEM 3 */}
+            <Reveal delay={160}>
+              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
+                {/* <img src="..." alt="Resultado 3" className="h-full w-full object-cover" /> */}
+                <span className="opacity-40">Foto em breve</span>
+              </div>
+            </Reveal>
+            {/* IMAGEM 4 */}
+            <Reveal delay={240}>
+              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
+                {/* <img src="..." alt="Resultado 4" className="h-full w-full object-cover" /> */}
+                <span className="opacity-40">Foto em breve</span>
+              </div>
+            </Reveal>
+            {/* IMAGEM 5 */}
+            <Reveal delay={320}>
+              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
+                {/* <img src="..." alt="Resultado 5" className="h-full w-full object-cover" /> */}
+                <span className="opacity-40">Foto em breve</span>
+              </div>
+            </Reveal>
+            {/* IMAGEM 6 */}
+            <Reveal delay={400}>
+              <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
+                {/* <img src="..." alt="Resultado 6" className="h-full w-full object-cover" /> */}
+                <span className="opacity-40">Foto em breve</span>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
