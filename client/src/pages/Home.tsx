@@ -600,7 +600,7 @@ export default function Home() {
               ))}
             </div>
 
-            <CtaButton href="#contato" variant="gold" className="mt-10">
+            <CtaButton href={WHATSAPP} variant="gold" className="mt-10">
               CONHEÇA A DRA. EDILENE LOPES
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </CtaButton>
