@@ -496,9 +496,7 @@ export default function Home() {
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:py-24">
           <div className="animate-rise">
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-cream px-4 py-1.5 text-[10px] uppercase tracking-[0.22em] text-primary">
-              <Star className="h-3.5 w-3.5 fill-gold text-gold" /> 4,9 · +3.500 atendimentos
-            </span>
+
             <h1 className="mt-6 font-serif text-[2.6rem] leading-[1.05] text-primary sm:text-5xl md:text-6xl">
               Sua melhor versão,
               <br />
