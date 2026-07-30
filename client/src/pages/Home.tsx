@@ -6,6 +6,19 @@ import useEmblaCarousel from "embla-carousel-react";
 import heroImage from "@/assets/hero-woman.jpg";
 import clinicImage from "@/assets/clinic-interior.jpg";
 import logoMark from "@/assets/logo-mark.png";
+
+import res1 from "@/assets/resultados/res-1.jpeg";
+import res2 from "@/assets/resultados/res-2.jpeg";
+import res3 from "@/assets/resultados/res-3.jpeg";
+import res4 from "@/assets/resultados/res-4.jpeg";
+import res5 from "@/assets/resultados/res-5.jpeg";
+import res6 from "@/assets/resultados/res-6.jpeg";
+import res7 from "@/assets/resultados/res-7.jpeg";
+import res8 from "@/assets/resultados/res-8.jpeg";
+import res9 from "@/assets/resultados/res-9.jpeg";
+import res10 from "@/assets/resultados/res-10.jpeg";
+
+const resultsPhotos = [res1, res2, res3, res4, res5, res6, res7, res8, res9, res10];
 import { Reveal } from "@/components/Reveal";
 import {
   MapPin,
@@ -292,19 +305,18 @@ function ResultsCarousel() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // We have 3 slots initially as requested by the user, ready for more
-  const slots = [1, 2, 3];
+  // We use the imported photos array
+  const slots = resultsPhotos;
 
   return (
     <div className="relative mt-14 px-4 sm:px-12">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex -ml-4">
-          {slots.map((s, i) => (
+          {slots.map((src, i) => (
             <div key={i} className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
               <Reveal delay={i * 80}>
-                <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center text-muted-foreground text-sm">
-                  {/* <img src="..." alt={`Resultado ${s}`} className="h-full w-full object-cover" /> */}
-                  <span className="opacity-40">Foto em breve</span>
+                <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center bg-black/5">
+                  <img src={src} alt={`Resultado ${i + 1}`} className="h-full w-full object-cover" />
                 </div>
               </Reveal>
             </div>
