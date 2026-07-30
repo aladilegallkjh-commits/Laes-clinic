@@ -454,7 +454,7 @@ export default function Home() {
             ))}
           </nav>
           <div className="flex items-center gap-2 justify-self-end">
-            <CtaButton href="#contato" className="hidden !px-5 !py-2.5 sm:inline-flex">
+            <CtaButton href={WHATSAPP} className="hidden !px-5 !py-2.5 sm:inline-flex">
               AGENDAR
               <MessageCircle className="h-4 w-4 text-gold" />
             </CtaButton>
