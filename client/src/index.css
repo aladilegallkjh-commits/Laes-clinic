@@ -118,7 +118,7 @@
   background: color-mix(in oklab, var(--cream) 72%, transparent);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent);
+  border: 2px solid color-mix(in oklab, var(--gold) 35%, transparent);
   box-shadow: 0 4px 24px -4px color-mix(in oklab, var(--primary) 10%, transparent),
               inset 0 1px 0 color-mix(in oklab, white 60%, transparent);
 }
@@ -127,7 +127,7 @@
   background: color-mix(in oklab, white 55%, transparent);
   backdrop-filter: blur(20px) saturate(1.6);
   -webkit-backdrop-filter: blur(20px) saturate(1.6);
-  border: 1px solid color-mix(in oklab, var(--gold) 40%, transparent);
+  border: 2px solid color-mix(in oklab, var(--gold) 40%, transparent);
   box-shadow: 0 8px 32px -8px color-mix(in oklab, var(--primary) 12%, transparent),
               inset 0 1.5px 0 color-mix(in oklab, white 70%, transparent);
 }
@@ -136,7 +136,7 @@
   background: color-mix(in oklab, white 70%, transparent);
   backdrop-filter: blur(28px) saturate(1.8);
   -webkit-backdrop-filter: blur(28px) saturate(1.8);
-  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+  border: 2px solid color-mix(in oklab, var(--gold) 45%, transparent);
   box-shadow: 0 12px 48px -12px color-mix(in oklab, var(--primary) 15%, transparent),
               inset 0 2px 0 color-mix(in oklab, white 80%, transparent);
 }
@@ -145,8 +145,8 @@
   background: color-mix(in oklab, var(--primary) 70%, transparent);
   backdrop-filter: blur(24px) saturate(1.2);
   -webkit-backdrop-filter: blur(24px) saturate(1.2);
-  border-top: 1px solid color-mix(in oklab, var(--gold) 50%, transparent);
-  border-bottom: 1px solid color-mix(in oklab, var(--gold) 50%, transparent);
+  border-top: 2px solid color-mix(in oklab, var(--gold) 50%, transparent);
+  border-bottom: 2px solid color-mix(in oklab, var(--gold) 50%, transparent);
   box-shadow: 0 16px 40px -12px color-mix(in oklab, var(--primary) 60%, transparent);
 }
 
