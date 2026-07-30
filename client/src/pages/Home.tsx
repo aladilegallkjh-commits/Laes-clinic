@@ -316,7 +316,7 @@ function ResultsCarousel() {
             <div key={i} className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
               <Reveal delay={i * 80}>
                 <div className="card-lift glass-card overflow-hidden rounded-3xl aspect-[4/5] flex items-center justify-center bg-black/5">
-                  <img src={src} alt={`Resultado ${i + 1}`} className="h-full w-full object-cover" />
+                  <img src={src} alt={`Resultado ${i + 1}`} className="h-full w-full object-contain" />
                 </div>
               </Reveal>
             </div>
