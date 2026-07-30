@@ -621,6 +621,25 @@ export default function Home() {
         </div>
       </section>
 
+
+
+      {/* Results */}
+      <section id="resultados" className="py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <Reveal className="text-center">
+            <SectionLabel>Resultados</SectionLabel>
+            <h2 className="mx-auto max-w-2xl font-serif text-3xl text-primary sm:text-4xl">
+              Protocolos que entregam resultado real.
+            </h2>
+          </Reveal>
+
+          {/* Carrossel de fotos */}
+          <ResultsCarousel />
+        </div>
+      </section>
+
+
+
       {/* Treatments */}
       <section id="tratamentos" className="py-20">
         <div className="mx-auto max-w-7xl px-6">
@@ -716,23 +735,6 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-
-
-      {/* Results */}
-      <section id="resultados" className="py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <Reveal className="text-center">
-            <SectionLabel>Resultados</SectionLabel>
-            <h2 className="mx-auto max-w-2xl font-serif text-3xl text-primary sm:text-4xl">
-              Protocolos que entregam resultado real.
-            </h2>
-          </Reveal>
-
-          {/* Carrossel de fotos — aguardando imagens do PDF */}
-          <ResultsCarousel />
         </div>
       </section>
 
