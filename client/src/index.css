@@ -159,17 +159,34 @@
   }
   body {
     background-color: var(--color-background);
-    background-image: url('@/assets/bg-texture.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    @media (min-width: 1024px) {
-      background-position: center center;
-      background-size: 100vw 100vh;
-    }
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('@/assets/bg-texture.jpg');
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1024px) {
+    body::before {
+      top: 50%;
+      left: 50%;
+      width: 100vh;
+      height: 100vw;
+      transform: translate(-50%, -50%) rotate(90deg);
+      background-position: center center;
+    }
   }
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
