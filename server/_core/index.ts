@@ -53,6 +53,11 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
+  // Health-check / keep-alive endpoint
+  app.get("/api/ping", (_req, res) => {
+    res.json({ status: "ok", uptime: Math.floor(process.uptime()), timestamp: new Date().toISOString() });
+  });
+
   // tRPC API
   app.use(
     "/api/trpc",
@@ -77,7 +82,37 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
+    startKeepAlive();
   });
+}
+
+/**
+ * Pings the server's own /api/ping endpoint every 14 minutes to prevent
+ * Render free-tier from sleeping the service after 15 min of inactivity.
+ * Only runs in production when RENDER_EXTERNAL_URL is set.
+ */
+function startKeepAlive() {
+  const renderUrl = process.env.RENDER_EXTERNAL_URL;
+  if (!renderUrl || process.env.NODE_ENV !== "production") return;
+
+  const pingUrl = `${renderUrl.replace(/\/$/, "")}/api/ping`;
+  const INTERVAL_MS = 14 * 60 * 1000; // 14 minutes
+
+  console.log(`[keep-alive] Pinging ${pingUrl} every 14 min to prevent sleep.`);
+
+  setInterval(async () => {
+    try {
+      const res = await fetch(pingUrl);
+      if (res.ok) {
+        const data = await res.json() as { uptime: number };
+        console.log(`[keep-alive] Ping OK — server uptime: ${data.uptime}s`);
+      } else {
+        console.warn(`[keep-alive] Ping retornou status ${res.status}`);
+      }
+    } catch (err) {
+      console.error(`[keep-alive] Falha no ping:`, err);
+    }
+  }, INTERVAL_MS);
 }
 
 startServer().catch(console.error);

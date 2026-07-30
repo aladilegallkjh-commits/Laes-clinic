@@ -326,7 +326,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {adminBar}
-      <div id="inicio" className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <div id="inicio" className="min-h-screen overflow-x-hidden text-foreground">
       {/* Top bar */}
       <div className="bg-primary text-primary-foreground">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 text-[11px] sm:px-6">
@@ -356,8 +356,8 @@ export default function Home() {
       <header
         className={`sticky top-0 z-50 border-b transition-all duration-500 ${
           scrolled
-            ? "border-border/60 bg-background/85 py-1 shadow-sm backdrop-blur-xl"
-            : "border-transparent bg-background/60 py-2 backdrop-blur"
+            ? "border-white/30 glass-strong py-1 shadow-sm"
+            : "border-transparent bg-white/20 backdrop-blur-md py-2"
         }`}
       >
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-2 sm:px-6 lg:flex lg:justify-between">
@@ -391,7 +391,7 @@ export default function Home() {
 
         {/* Mobile menu */}
         <div
-          className={`overflow-hidden border-t border-border/50 bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-500 lg:hidden ${
+          className={`overflow-hidden border-t border-white/20 glass-strong transition-[max-height,opacity] duration-500 lg:hidden ${
             menuOpen ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
@@ -476,7 +476,7 @@ export default function Home() {
         </div>
 
         {/* Marquee */}
-        <div className="border-y border-border/60 bg-cream py-3">
+        <div className="border-y border-white/30 glass py-3">
           <div className="flex w-max animate-marquee gap-10 whitespace-nowrap">
             {[...marquee, ...marquee, ...marquee, ...marquee].map((m, i) => (
               <span
@@ -491,11 +491,11 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="bg-background py-14">
+      <section className="py-14">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 md:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 90} from="scale">
-              <div className="card-lift rounded-2xl border border-border/70 bg-card px-4 py-7 text-center">
+              <div className="card-lift glass-card rounded-2xl px-4 py-7 text-center">
                 <div className="font-serif text-4xl text-primary">{s.value}</div>
                 <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                   {s.label}
@@ -507,7 +507,7 @@ export default function Home() {
       </section>
 
       {/* Treatments */}
-      <section id="tratamentos" className="bg-background py-20">
+      <section id="tratamentos" className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="text-center">
             <SectionLabel>Tratamentos</SectionLabel>
@@ -517,7 +517,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={120} className="mt-8 flex justify-center">
-            <div className="inline-flex rounded-full border border-border bg-card p-1">
+            <div className="inline-flex rounded-full glass p-1">
               {(["Todos", "Facial", "Corporal"] as const).map((f) => (
                 <button
                   key={f}
@@ -538,7 +538,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visibleTreatments.map((t, i) => (
               <Reveal key={t.title} delay={i * 80}>
-                <article className="card-lift group h-full rounded-3xl border border-border/70 bg-card p-7 text-center">
+                <article className="card-lift group h-full glass-card rounded-3xl p-7 text-center">
                   <div className="mx-auto mb-5 grid h-20 w-20 place-items-center rounded-full bg-primary text-gold shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
                     <t.icon className="h-9 w-9" strokeWidth={1.4} />
                   </div>
@@ -547,7 +547,7 @@ export default function Home() {
                     {t.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{t.desc}</p>
-                  <div className="mt-6 flex items-center justify-center gap-4 border-t border-border/60 pt-4 text-[11px] text-muted-foreground">
+                  <div className="mt-6 flex items-center justify-center gap-4 border-t border-white/30 pt-4 text-[11px] text-muted-foreground">
                     <span className="flex items-center gap-1.5">
                       <Clock className="h-3.5 w-3.5 text-gold" /> {t.duration}
                     </span>
@@ -569,7 +569,7 @@ export default function Home() {
       </section>
 
       {/* Technologies */}
-      <section id="tecnologias" className="relative overflow-hidden bg-cream py-20">
+      <section id="tecnologias" className="relative overflow-hidden py-20">
         <div className="pointer-events-none absolute -right-10 top-10 opacity-20">
           <Leaf className="h-52 w-52 animate-float-slow text-primary/30" strokeWidth={1} />
         </div>
@@ -584,7 +584,7 @@ export default function Home() {
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {technologies.map((tech, i) => (
               <Reveal key={tech.name} delay={i * 90} from="up">
-                <div className="card-lift group relative h-full overflow-hidden rounded-3xl border border-gold/25 bg-background p-7">
+                <div className="card-lift group relative h-full overflow-hidden rounded-3xl glass-card p-7">
                   <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gold-soft/30 transition-transform duration-700 group-hover:scale-150" />
                   <tech.icon
                     className="relative mb-5 h-8 w-8 text-gold transition-transform duration-500 group-hover:-translate-y-1"
@@ -667,7 +667,7 @@ export default function Home() {
       </section>
 
       {/* Results */}
-      <section id="resultados" className="bg-background py-20">
+      <section id="resultados" className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="text-center">
             <SectionLabel>Resultados</SectionLabel>
@@ -679,7 +679,7 @@ export default function Home() {
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {results.map((r, i) => (
               <Reveal key={r.name} delay={i * 100}>
-                <div className="card-lift h-full rounded-3xl border border-border/70 bg-card p-8">
+                <div className="card-lift h-full glass-card rounded-3xl p-8">
                   <div className="gold-text font-serif text-4xl">{r.metric}</div>
                   <h3 className="mt-4 font-sans text-xs font-semibold uppercase tracking-widest text-primary">
                     {r.name}
@@ -694,7 +694,7 @@ export default function Home() {
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 110} from="up">
-                <figure className="card-lift relative h-full rounded-3xl border border-gold/25 bg-cream p-8">
+                <figure className="card-lift relative h-full rounded-3xl glass-card p-8">
                   <Quote className="absolute right-6 top-6 h-8 w-8 text-gold/30" />
                   <div className="mb-4 flex gap-1">
                     {Array.from({ length: 5 }).map((_, s) => (
@@ -702,7 +702,7 @@ export default function Home() {
                     ))}
                   </div>
                   <blockquote className="text-sm leading-relaxed text-muted-foreground">
-                    “{t.text}”
+                    "{t.text}"
                   </blockquote>
                   <figcaption className="mt-6">
                     <div className="font-serif text-lg text-primary">{t.name}</div>
@@ -716,7 +716,7 @@ export default function Home() {
       </section>
 
       {/* Blog */}
-      <section id="blog" className="bg-cream py-20">
+      <section id="blog" className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="text-center">
             <SectionLabel>Blog</SectionLabel>
@@ -730,7 +730,7 @@ export default function Home() {
               <Reveal key={p.title} delay={i * 100}>
                 <a
                   href="#blog"
-                  className="card-lift group flex h-full flex-col rounded-3xl border border-border/70 bg-background p-7"
+                  className="card-lift group flex h-full flex-col rounded-3xl glass-card p-7"
                 >
                   <span className="text-[10px] uppercase tracking-[0.25em] text-gold">
                     {p.category}
@@ -750,24 +750,26 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="contato" className="relative overflow-hidden bg-background py-20">
+      <section id="contato" className="relative overflow-hidden py-20">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-soft/20 blur-3xl" />
         <Reveal className="relative mx-auto max-w-3xl px-6 text-center" from="scale">
-          <div className="mx-auto mb-6 grid h-16 w-16 animate-float place-items-center rounded-full border border-gold/50 bg-cream">
+          <div className="mx-auto mb-6 grid h-16 w-16 animate-float place-items-center rounded-full border border-gold/50 glass">
             <Leaf className="h-6 w-6 text-gold" />
           </div>
-          <h2 className="font-serif text-3xl text-primary md:text-4xl">
-            Pronta para transformar sua pele
-            <br className="hidden sm:block" /> e elevar sua autoestima?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground">
-            Agende sua avaliação personalizada e descubra o melhor tratamento facial ou corporal
-            para você.
-          </p>
-          <CtaButton href={WHATSAPP} className="mt-8 !px-8 !py-4">
-            AGENDAR VIA WHATSAPP
-            <MessageCircle className="h-4 w-4 text-gold" />
-          </CtaButton>
+          <div className="mx-auto max-w-2xl rounded-3xl glass-strong p-10">
+            <h2 className="font-serif text-3xl text-primary md:text-4xl">
+              Pronta para transformar sua pele
+              <br className="hidden sm:block" /> e elevar sua autoestima?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground">
+              Agende sua avaliação personalizada e descubra o melhor tratamento facial ou corporal
+              para você.
+            </p>
+            <CtaButton href={WHATSAPP} className="mt-8 !px-8 !py-4">
+              AGENDAR VIA WHATSAPP
+              <MessageCircle className="h-4 w-4 text-gold" />
+            </CtaButton>
+          </div>
         </Reveal>
       </section>
 
