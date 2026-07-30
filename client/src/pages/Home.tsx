@@ -595,7 +595,7 @@ export default function Home() {
       {/* About */}
       <section
         id="sobre"
-        className="relative overflow-hidden bg-primary py-20 text-primary-foreground"
+        className="relative overflow-hidden glass-primary py-20 text-primary-foreground"
       >
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
           <Reveal from="left">
@@ -759,7 +759,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative overflow-hidden bg-primary py-16 text-cream">
+      <footer className="relative overflow-hidden glass-primary py-16 text-cream">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Logo light />
