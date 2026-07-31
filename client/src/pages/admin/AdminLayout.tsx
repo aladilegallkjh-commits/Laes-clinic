@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   LayoutDashboard,
   CalendarDays,
@@ -55,6 +55,15 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   };
 
   const activeItem = sidebarItems.find((i) => i.id === activeView);
+
+  // Make body transparent so the bg-texture shows through glassmorphism cards
+  useEffect(() => {
+    const prev = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = 'transparent';
+    return () => {
+      document.body.style.backgroundColor = prev;
+    };
+  }, []);
 
   return (
     <div className="flex h-screen font-sans overflow-hidden bg-transparent">
