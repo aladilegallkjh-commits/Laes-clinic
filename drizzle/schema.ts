@@ -138,3 +138,66 @@ export const beforeAfterGallery = mysqlTable("beforeAfterGallery", {
 
 export type BeforeAfterGallery = typeof beforeAfterGallery.$inferSelect;
 export type InsertBeforeAfterGallery = typeof beforeAfterGallery.$inferInsert;
+
+// Anamnese / Prontuário
+export const anamnesis = mysqlTable("anamnesis", {
+  id: int("id").autoincrement().primaryKey(),
+  clientId: int("clientId").notNull(),
+  allergies: boolean("allergies").default(false).notNull(),
+  pregnancyLactation: boolean("pregnancyLactation").default(false).notNull(),
+  medications: text("medications"),
+  previousProcedures: text("previousProcedures"),
+  clinicalNotes: text("clinicalNotes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Anamnesis = typeof anamnesis.$inferSelect;
+export type InsertAnamnesis = typeof anamnesis.$inferInsert;
+
+// Transações Financeiras
+export const financialTransactions = mysqlTable("financialTransactions", {
+  id: int("id").autoincrement().primaryKey(),
+  type: mysqlEnum("type", ["income", "expense"]).notNull(),
+  amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
+  paymentMethod: mysqlEnum("paymentMethod", ["pix", "credit_card", "debit_card", "cash", "other"]).notNull(),
+  category: varchar("category", { length: 100 }).notNull(),
+  description: text("description"),
+  clientId: int("clientId"),
+  appointmentId: int("appointmentId"),
+  transactionDate: timestamp("transactionDate").defaultNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FinancialTransaction = typeof financialTransactions.$inferSelect;
+export type InsertFinancialTransaction = typeof financialTransactions.$inferInsert;
+
+// Estoque / Insumos
+export const inventory = mysqlTable("inventory", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  brand: varchar("brand", { length: 255 }),
+  lotNumber: varchar("lotNumber", { length: 100 }),
+  expirationDate: timestamp("expirationDate"),
+  quantity: int("quantity").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Inventory = typeof inventory.$inferSelect;
+export type InsertInventory = typeof inventory.$inferInsert;
+
+// Pacotes de Clientes (Controle de Sessões)
+export const clientPackages = mysqlTable("clientPackages", {
+  id: int("id").autoincrement().primaryKey(),
+  clientId: int("clientId").notNull(),
+  procedureId: int("procedureId").notNull(),
+  totalSessions: int("totalSessions").notNull(),
+  completedSessions: int("completedSessions").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type ClientPackage = typeof clientPackages.$inferSelect;
+export type InsertClientPackage = typeof clientPackages.$inferInsert;
