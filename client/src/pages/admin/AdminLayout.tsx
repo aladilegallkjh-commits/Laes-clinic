@@ -191,7 +191,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           </div>
           <div className="flex items-center gap-3">
             <div className="text-right hidden sm:block">
-              <p className="text-xs font-semibold text-[#1a3a2a]">Dra. Laís</p>
+              <p className="text-xs font-semibold text-[#1a3a2a]">Dr Edilene</p>
               <p className="text-[10px] text-gray-400">Administrador</p>
             </div>
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#2d6a4f] to-[#52b788] flex items-center justify-center text-white text-sm font-bold shadow-md ring-2 ring-[#2d6a4f]/30">
@@ -219,7 +219,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   {dateStr}
                 </p>
                 <h2 className="text-2xl font-bold text-[#1a3a2a]">
-                  {greeting}, Dra. Laís
+                  {greeting}, Dr Edilene
                 </h2>
               </div>
             );
