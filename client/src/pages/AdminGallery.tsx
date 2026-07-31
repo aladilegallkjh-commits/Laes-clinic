@@ -6,39 +6,24 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import AdminLogin from "./AdminLogin";
 
 export default function AdminGallery() {
-  const { user, loading } = useAuth();
   const [beforeImage, setBeforeImage] = useState("");
   const [afterImage, setAfterImage] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [clientName, setClientName] = useState("");
   const [procedureId, setProcedureId] = useState("1");
+  const isLoggedIn = localStorage.getItem('adminToken') === 'true';
 
   const { data: gallery, refetch } = trpc.admin.gallery.list.useQuery();
   const { data: procedures } = trpc.admin.procedures.list.useQuery();
   const createGalleryMutation = trpc.admin.gallery.create.useMutation();
   const deleteGalleryMutation = trpc.admin.gallery.delete.useMutation();
 
-  if (loading) return <div className="flex items-center justify-center h-screen">Carregando...</div>;
-  if (!user || user.role !== "admin") {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen bg-gray-50 p-4">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center border border-gray-100">
-          <h2 className="text-2xl font-bold mb-2 text-primary">Acesso Restrito</h2>
-          <p className="text-gray-600 mb-8">Faça login com sua conta de administrador para acessar a galeria.</p>
-          <Button 
-            onClick={() => {
-              import('@/const').then(m => m.startLogin());
-            }} 
-            className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6"
-          >
-            Fazer Login
-          </Button>
-        </div>
-      </div>
-    );
+  if (!isLoggedIn) {
+    return <AdminLogin />;
   }
   const handleAddGallery = async () => {
     if (!beforeImage || !afterImage) {
