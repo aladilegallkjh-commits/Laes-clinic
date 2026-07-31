@@ -13,7 +13,7 @@ import {
   Menu,
 } from "lucide-react";
 
-import logoMark from "@/assets/logo-cropped.png";
+import logoMark from "@/assets/logo-mark.png";
 
 export type AdminView =
   | "dashboard"
@@ -28,17 +28,16 @@ interface SidebarItem {
   id: AdminView;
   label: string;
   icon: React.ReactNode;
-  emoji: string;
 }
 
 const sidebarItems: SidebarItem[] = [
-  { id: "dashboard",    label: "Dashboard",          icon: <LayoutDashboard size={18} />, emoji: "📊" },
-  { id: "appointments", label: "Agenda",              icon: <CalendarDays size={18} />,   emoji: "📅" },
-  { id: "clients",      label: "Prontuário",          icon: <FolderHeart size={18} />,    emoji: "📂" },
-  { id: "finance",      label: "Financeiro",          icon: <Wallet size={18} />,         emoji: "💰" },
-  { id: "cms",          label: "Gestão do Site",      icon: <Globe size={18} />,          emoji: "🌐" },
-  { id: "analytics",    label: "Métricas",            icon: <BarChart3 size={18} />,      emoji: "📈" },
-  { id: "whatsapp",     label: "WhatsApp",            icon: <MessageSquare size={18} />,  emoji: "💬" },
+  { id: "dashboard",    label: "Dashboard",       icon: <LayoutDashboard size={18} /> },
+  { id: "appointments", label: "Agenda",           icon: <CalendarDays size={18} /> },
+  { id: "clients",      label: "Prontuário",       icon: <FolderHeart size={18} /> },
+  { id: "finance",      label: "Financeiro",       icon: <Wallet size={18} /> },
+  { id: "cms",          label: "Gestão do Site",   icon: <Globe size={18} /> },
+  { id: "analytics",    label: "Métricas",         icon: <BarChart3 size={18} /> },
+  { id: "whatsapp",     label: "WhatsApp",         icon: <MessageSquare size={18} /> },
 ];
 
 interface AdminLayoutProps {
@@ -71,34 +70,39 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       <aside
         className={`
           fixed lg:relative z-30 flex flex-col h-full
-          bg-white/80 backdrop-blur-xl
-          border-r border-gray-200/60
-          shadow-[4px_0_24px_rgba(0,0,0,0.06)]
+          bg-[#1a3a2a]/85 backdrop-blur-xl
+          border-r border-white/10
+          shadow-[4px_0_32px_rgba(0,0,0,0.18)]
           transition-all duration-300 ease-in-out
-          ${collapsed ? "w-[72px]" : "w-[248px]"}
+          ${collapsed ? "w-[72px]" : "w-[250px]"}
           ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
         {/* ── Logo ── */}
         <div
-          className={`flex items-center gap-3 px-4 py-5 border-b border-gray-100/80
-            ${collapsed ? "justify-center" : ""}`}
+          className={`flex items-center border-b border-white/10 py-4 px-4
+            ${collapsed ? "justify-center" : "gap-3"}`}
         >
-          <img
-            src={logoMark}
-            alt="LAES Clinic"
-            className="w-9 h-9 object-contain flex-shrink-0 rounded-lg"
-          />
+          {/* Logo circular com fundo semi-branco para destaque */}
+          <div className="w-10 h-10 rounded-full bg-white/15 p-0.5 flex-shrink-0 ring-1 ring-white/20">
+            <img
+              src={logoMark}
+              alt="LAES Clinic"
+              className="w-full h-full object-contain rounded-full"
+            />
+          </div>
           {!collapsed && (
             <div className="leading-tight">
-              <p className="font-bold text-[#1a3a2a] text-sm tracking-wide">LAES Clinic</p>
-              <p className="text-[10px] text-[#7aab92] uppercase tracking-widest font-medium">Painel Admin</p>
+              <p className="font-bold text-white text-sm tracking-wide">LAES Clinic</p>
+              <p className="text-[10px] text-[#95d5b2] uppercase tracking-widest font-medium">
+                Painel Admin
+              </p>
             </div>
           )}
         </div>
 
         {/* ── Nav ── */}
-        <nav className="flex-1 py-3 overflow-y-auto space-y-0.5 px-2">
+        <nav className="flex-1 py-3 overflow-y-auto px-2 space-y-0.5">
           {sidebarItems.map((item) => {
             const isActive = activeView === item.id;
             return (
@@ -110,21 +114,20 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
                   transition-all duration-150 relative group
                   ${isActive
-                    ? "bg-[#2d6a4f] text-white shadow-[0_4px_12px_rgba(45,106,79,0.35)]"
-                    : "text-gray-500 hover:bg-[#f0f8f4] hover:text-[#2d6a4f]"
+                    ? "bg-white/20 text-white backdrop-blur-sm shadow-inner ring-1 ring-white/20"
+                    : "text-[#95d5b2] hover:bg-white/10 hover:text-white"
                   }
                 `}
               >
-                <span
-                  className={`flex-shrink-0 transition-colors ${
-                    isActive ? "text-white" : "text-gray-400 group-hover:text-[#2d6a4f]"
-                  }`}
-                >
+                {isActive && (
+                  <span className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-[#95d5b2]" />
+                )}
+                <span className={`flex-shrink-0 ${isActive ? "text-white" : "text-[#95d5b2] group-hover:text-white"}`}>
                   {item.icon}
                 </span>
-                {!collapsed && <span className="truncate">{item.label}</span>}
+                {!collapsed && <span>{item.label}</span>}
                 {collapsed && (
-                  <div className="absolute left-full ml-3 px-2.5 py-1.5 bg-[#1a3a2a] text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-all shadow-lg z-50">
+                  <div className="absolute left-full ml-3 px-3 py-1.5 bg-[#1a3a2a] text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-all shadow-xl z-50 border border-white/10">
                     {item.label}
                   </div>
                 )}
@@ -133,24 +136,27 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           })}
         </nav>
 
-        {/* ── Collapse toggle ── */}
+        {/* ── Collapse ── */}
         <div className="px-2 pb-2">
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className={`hidden lg:flex w-full items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium
-              text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors
+            className={`hidden lg:flex w-full items-center gap-2 px-3 py-2 rounded-xl text-xs
+              text-[#95d5b2] hover:bg-white/10 hover:text-white transition-colors
               ${collapsed ? "justify-center" : ""}`}
           >
-            {collapsed ? <ChevronRight size={16} /> : <><ChevronLeft size={16} /><span>Recolher</span></>}
+            {collapsed
+              ? <ChevronRight size={15} />
+              : <><ChevronLeft size={15} /><span>Recolher</span></>
+            }
           </button>
         </div>
 
         {/* ── Logout ── */}
-        <div className="px-2 pb-4 border-t border-gray-100/80 pt-2">
+        <div className="px-2 pb-4 border-t border-white/10 pt-2">
           <button
             onClick={handleLogout}
             className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
-              text-red-400 hover:bg-red-50 hover:text-red-600 transition-colors
+              text-red-300 hover:bg-red-500/20 hover:text-red-200 transition-colors
               ${collapsed ? "justify-center" : ""}`}
             title={collapsed ? "Sair" : undefined}
           >
@@ -160,10 +166,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </div>
       </aside>
 
-      {/* ─────────── MAIN ─────────── */}
+      {/* ─────────── MAIN CONTENT ─────────── */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Top bar */}
-        <header className="h-16 flex items-center justify-between px-6 bg-white/70 backdrop-blur-md border-b border-gray-200/50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <header className="h-16 flex items-center justify-between px-6 bg-white/60 backdrop-blur-xl border-b border-white/40 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
           <div className="flex items-center gap-3">
             <button
               className="lg:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100"
@@ -172,11 +178,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               <Menu size={20} />
             </button>
             <div>
-              <h1 className="text-base font-bold text-[#1a3a2a]">
-                {activeItem?.emoji} {activeItem?.label}
-              </h1>
+              <h1 className="text-base font-bold text-[#1a3a2a]">{activeItem?.label}</h1>
               <p className="text-xs text-gray-400 hidden sm:block capitalize">
-                {new Date().toLocaleDateString("pt-BR", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
+                {new Date().toLocaleDateString("pt-BR", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </p>
             </div>
           </div>
@@ -185,7 +194,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               <p className="text-xs font-semibold text-[#1a3a2a]">Dra. Laís</p>
               <p className="text-[10px] text-gray-400">Administrador</p>
             </div>
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#2d6a4f] to-[#40916c] flex items-center justify-center text-white text-sm font-bold shadow-md">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#2d6a4f] to-[#52b788] flex items-center justify-center text-white text-sm font-bold shadow-md ring-2 ring-[#2d6a4f]/30">
               L
             </div>
           </div>
