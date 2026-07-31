@@ -167,7 +167,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       </aside>
 
       {/* ─────────── MAIN CONTENT ─────────── */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden" style={{ background: 'transparent' }}>
         {/* Top bar */}
         <header className="h-16 flex items-center justify-between px-6 bg-white/60 backdrop-blur-xl border-b border-white/40 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
           <div className="flex items-center gap-3">
@@ -201,7 +201,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </header>
 
         {/* View content */}
-        <main className="flex-1 overflow-y-auto p-6">
+        <main data-admin-main className="flex-1 overflow-y-auto p-6" style={{ background: 'transparent' }}>
           {/* ── Greeting Banner ── */}
           {(() => {
             const now = new Date();

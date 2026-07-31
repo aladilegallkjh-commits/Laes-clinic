@@ -198,4 +198,16 @@
     color: var(--primary);
   }
 }
+/* ─── Admin Glass Mode ─── */
+.admin-glass-page {
+  background: transparent !important;
+}
 
+.admin-glass-page body {
+  background: transparent !important;
+}
+
+/* Force the admin area main scrollable area to be transparent */
+[data-admin-main] {
+  background: transparent;
+}
