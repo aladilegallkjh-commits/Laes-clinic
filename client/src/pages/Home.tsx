@@ -13,12 +13,11 @@ import res3 from "@/assets/resultados/res-3.jpeg";
 import res4 from "@/assets/resultados/res-4.jpeg";
 import res5 from "@/assets/resultados/res-5.jpeg";
 import res6 from "@/assets/resultados/res-6.jpeg";
-import res7 from "@/assets/resultados/res-7.jpeg";
 import res8 from "@/assets/resultados/res-8.jpeg";
 import res9 from "@/assets/resultados/res-9.jpeg";
 import res10 from "@/assets/resultados/res-10.jpeg";
 
-const resultsPhotos = [res1, res2, res3, res4, res5, res6, res7, res8, res9, res10];
+const resultsPhotos = [res1, res2, res3, res4, res5, res6, res8, res9, res10];
 import { Reveal } from "@/components/Reveal";
 import {
   MapPin,
