@@ -82,7 +82,7 @@ export default function WhatsAppView() {
   return (
     <div className="space-y-6">
       {/* Pending returns table */}
-      <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
+      <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
         <div className="flex items-center gap-2 px-6 py-4 border-b border-gray-50">
           <Clock size={16} className="text-orange-500" />
           <h2 className="font-semibold text-[#1a3a2a]">Retornos e Manutenções</h2>
@@ -137,7 +137,7 @@ export default function WhatsAppView() {
       </div>
 
       {/* Custom blast */}
-      <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 p-6 space-y-5">
+      <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 p-6 space-y-5">
         <div className="flex items-center gap-2">
           <Send size={16} className="text-[#2d6a4f]" />
           <h2 className="font-semibold text-[#1a3a2a]">Enviar Mensagem Personalizada</h2>

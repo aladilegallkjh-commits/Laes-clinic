@@ -115,7 +115,7 @@ export default function ClientsView() {
         </div>
 
         {showNewForm && (
-          <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm space-y-3">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-5 border border-gray-100 shadow-sm space-y-3">
             <h3 className="font-semibold text-sm text-[#1a3a2a]">Novo Cliente</h3>
             {[
               { label: "Nome *", key: "name", placeholder: "Nome completo" },
@@ -140,7 +140,7 @@ export default function ClientsView() {
           </div>
         )}
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
           {filtered.length === 0 ? (
             <div className="py-12 text-center text-gray-400 text-sm">Nenhum cliente encontrado</div>
           ) : (

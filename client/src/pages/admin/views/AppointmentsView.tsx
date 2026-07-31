@@ -60,7 +60,7 @@ export default function AppointmentsView() {
 
       {/* New appointment form */}
       {showForm && (
-        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
           <h3 className="font-semibold text-[#1a3a2a]">Novo Agendamento</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -120,7 +120,7 @@ export default function AppointmentsView() {
       )}
 
       {/* Appointments list */}
-      <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
+      <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
         {appointments.length === 0 ? (
           <div className="py-16 text-center text-gray-400">
             <CalendarPlus size={40} className="mx-auto mb-3 opacity-30" />

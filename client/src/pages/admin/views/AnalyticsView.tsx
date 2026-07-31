@@ -13,7 +13,7 @@ export default function AnalyticsView() {
     <div className="space-y-6">
       {/* Traffic summary */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
           <div className="bg-blue-50 p-3 rounded-xl">
             <Globe size={22} className="text-blue-600" />
           </div>
@@ -22,7 +22,7 @@ export default function AnalyticsView() {
             <p className="text-3xl font-bold text-[#1a3a2a]">{analytics?.todayVisits ?? 0}</p>
           </div>
         </div>
-        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
           <div className="bg-emerald-50 p-3 rounded-xl">
             <TrendingUp size={22} className="text-emerald-600" />
           </div>
@@ -35,7 +35,7 @@ export default function AnalyticsView() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Traffic sources */}
-        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm">
           <h3 className="font-semibold text-[#1a3a2a] mb-5 flex items-center gap-2">
             <Instagram size={16} className="text-pink-500" />
             Origem do Tráfego
@@ -67,7 +67,7 @@ export default function AnalyticsView() {
         </div>
 
         {/* Top procedures */}
-        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm">
           <h3 className="font-semibold text-[#1a3a2a] mb-5 flex items-center gap-2">
             <BarChart3 size={16} className="text-[#2d6a4f]" />
             Procedimentos Mais Visitados

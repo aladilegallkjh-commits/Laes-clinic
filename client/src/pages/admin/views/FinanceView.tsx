@@ -81,7 +81,7 @@ export default function FinanceView() {
           { label: "Total Saídas", value: fmt(totalExpense), icon: <TrendingDown size={20} className="text-red-500" />, bg: "bg-red-50", color: "text-red-600" },
           { label: "Saldo", value: fmt(balance), icon: <TrendingUp size={20} className={balance >= 0 ? "text-emerald-600" : "text-red-500"} />, bg: balance >= 0 ? "bg-emerald-50" : "bg-red-50", color: balance >= 0 ? "text-emerald-700" : "text-red-600" },
         ].map((c) => (
-          <div key={c.label} className="bg-white rounded-2xl p-5 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 flex items-center gap-4">
+          <div key={c.label} className="bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 flex items-center gap-4">
             <div className={`${c.bg} p-3 rounded-xl`}>{c.icon}</div>
             <div>
               <p className="text-xs text-gray-400 font-medium">{c.label}</p>
@@ -116,7 +116,7 @@ export default function FinanceView() {
           </div>
 
           {showForm && (
-            <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
               <h3 className="font-semibold text-[#1a3a2a]">Novo Lançamento</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -182,7 +182,7 @@ export default function FinanceView() {
             </div>
           )}
 
-          <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
             {transactions.length === 0 ? (
               <div className="py-16 text-center text-gray-400 text-sm">Nenhuma transação registrada</div>
             ) : (
@@ -229,7 +229,7 @@ export default function FinanceView() {
           </div>
 
           {showItemForm && (
-            <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
               <h3 className="font-semibold text-[#1a3a2a]">Novo Insumo / Lote</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -257,7 +257,7 @@ export default function FinanceView() {
             </div>
           )}
 
-          <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
             {inventory.length === 0 ? (
               <div className="py-16 text-center text-gray-400 text-sm">
                 <Package size={40} className="mx-auto mb-3 opacity-30" />

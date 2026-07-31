@@ -13,6 +13,8 @@ import {
   Menu,
 } from "lucide-react";
 
+import logoMark from '@/assets/logo-cropped.png';
+
 export type AdminView =
   | "dashboard"
   | "appointments"
@@ -67,23 +69,26 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       {/* Sidebar */}
       <aside
         className={`
-          fixed lg:relative z-30 flex flex-col h-full bg-white/90 backdrop-blur-md border-r border-gray-100
-          transition-all duration-300 ease-in-out shadow-sm
+          fixed lg:relative z-30 flex flex-col h-full bg-[#1a3a2a]/90 backdrop-blur-md border-r border-[#2d6a4f]/30
+          transition-all duration-300 ease-in-out shadow-lg
           ${collapsed ? "w-[72px]" : "w-[240px]"}
           ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
         {/* Logo area */}
-        <div className={`flex items-center h-16 px-4 border-b border-gray-100 ${collapsed ? "justify-center" : "justify-between"}`}>
+        <div className={`flex items-center h-16 px-4 border-b border-[#2d6a4f]/30 ${collapsed ? "justify-center" : "justify-between"}`}>
           {!collapsed && (
-            <div>
-              <p className="font-semibold text-sm text-[#1a3a2a] tracking-wide">LAES Clinic</p>
-              <p className="text-[10px] text-[#8a9e95] uppercase tracking-widest">Painel Admin</p>
+            <div className="flex items-center gap-2">
+              <img src={logoMark} alt="LAES Clinic" className="w-7 h-7 object-contain brightness-0 invert" />
+              <div>
+                <p className="font-semibold text-sm text-white tracking-wide">LAES Clinic</p>
+                <p className="text-[10px] text-[#a7d3be] uppercase tracking-widest">Painel Admin</p>
+              </div>
             </div>
           )}
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="hidden lg:flex items-center justify-center w-7 h-7 rounded-full bg-gray-50 border border-gray-200 text-gray-400 hover:bg-[#e8f5ee] hover:text-[#2d6a4f] transition-colors"
+            className="hidden lg:flex items-center justify-center w-7 h-7 rounded-full bg-[#2d6a4f]/20 border border-[#2d6a4f]/40 text-[#a7d3be] hover:bg-[#2d6a4f]/40 hover:text-white transition-colors"
           >
             {collapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
           </button>
@@ -101,15 +106,15 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                 className={`
                   w-full flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-150 relative group
                   ${isActive
-                    ? "text-[#2d6a4f] bg-[#e8f5ee]"
-                    : "text-gray-500 hover:text-[#2d6a4f] hover:bg-gray-50"
+                    ? "text-white bg-[#2d6a4f]/40"
+                    : "text-[#a7d3be] hover:text-white hover:bg-[#2d6a4f]/20"
                   }
                 `}
               >
                 {isActive && (
-                  <span className="absolute left-0 top-0 h-full w-[3px] rounded-r-full bg-[#2d6a4f]" />
+                  <span className="absolute left-0 top-0 h-full w-[3px] rounded-r-full bg-[#a7d3be]" />
                 )}
-                <span className={isActive ? "text-[#2d6a4f]" : ""}>{item.icon}</span>
+                <span className={isActive ? "text-[#a7d3be]" : ""}>{item.icon}</span>
                 {!collapsed && <span>{item.label}</span>}
                 {collapsed && (
                   <div className="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
@@ -122,10 +127,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </nav>
 
         {/* Logout */}
-        <div className="p-4 border-t border-gray-100">
+        <div className="p-4 border-t border-[#2d6a4f]/30">
           <button
             onClick={handleLogout}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-red-400 hover:bg-red-50 hover:text-red-600 transition-colors ${collapsed ? "justify-center" : ""}`}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-red-300 hover:bg-red-900/40 hover:text-red-200 transition-colors ${collapsed ? "justify-center" : ""}`}
             title={collapsed ? "Sair" : undefined}
           >
             <LogOut size={18} />

@@ -98,7 +98,7 @@ export default function CMSView() {
           </div>
 
           {showProcForm && (
-            <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
               <h3 className="font-semibold text-[#1a3a2a]">Novo Procedimento</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -136,7 +136,7 @@ export default function CMSView() {
             </div>
           )}
 
-          <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
             {procedures.length === 0 ? (
               <div className="py-12 text-center text-gray-400 text-sm">Nenhum procedimento cadastrado</div>
             ) : (
@@ -186,7 +186,7 @@ export default function CMSView() {
           </div>
 
           {showCourseForm && (
-            <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
+            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-gray-100 shadow-sm space-y-4">
               <h3 className="font-semibold text-[#1a3a2a]">Novo Curso</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -224,7 +224,7 @@ export default function CMSView() {
             </div>
           )}
 
-          <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden">
             {courses.length === 0 ? (
               <div className="py-12 text-center text-gray-400 text-sm">Nenhum curso cadastrado</div>
             ) : (
@@ -252,7 +252,7 @@ export default function CMSView() {
 
       {/* ─── Promotions ─── */}
       {tab === "promotions" && (
-        <div className="bg-white rounded-2xl p-6 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50">
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50">
           {promotions.length === 0 ? (
             <div className="py-12 text-center text-gray-400 text-sm">Nenhuma promoção ativa</div>
           ) : (
@@ -278,7 +278,7 @@ export default function CMSView() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {gallery.map((item: any) => (
-                <div key={item.id} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                <div key={item.id} className="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
                   <div className="grid grid-cols-2 h-40">
                     <img src={item.beforeImage} alt="Antes" className="w-full h-full object-cover" />
                     <img src={item.afterImage} alt="Depois" className="w-full h-full object-cover" />

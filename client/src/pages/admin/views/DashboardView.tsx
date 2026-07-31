@@ -53,7 +53,7 @@ export default function DashboardView() {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         {cards.map((c) => (
-          <div key={c.title} className="bg-white rounded-2xl p-5 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 flex items-start gap-4">
+          <div key={c.title} className="bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 flex items-start gap-4">
             <div className={`${c.bg} p-3 rounded-xl`}>{c.icon}</div>
             <div>
               <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">{c.title}</p>
@@ -138,7 +138,7 @@ export default function DashboardView() {
       </div>
 
       {/* Today's appointments table */}
-      <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50">
+      <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50">
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-50">
           <h2 className="font-semibold text-[#1a3a2a]">Pacientes de Hoje</h2>
           <span className="text-xs text-gray-400">{new Date().toLocaleDateString("pt-BR")}</span>
