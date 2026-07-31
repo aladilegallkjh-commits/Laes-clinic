@@ -55,7 +55,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   const activeItem = sidebarItems.find((i) => i.id === activeView);
 
   return (
-    <div className="flex h-screen bg-[#F7F8FA] font-sans overflow-hidden">
+    <div className="flex h-screen font-sans overflow-hidden bg-transparent">
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
@@ -67,7 +67,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       {/* Sidebar */}
       <aside
         className={`
-          fixed lg:relative z-30 flex flex-col h-full bg-white border-r border-gray-100
+          fixed lg:relative z-30 flex flex-col h-full bg-white/90 backdrop-blur-md border-r border-gray-100
           transition-all duration-300 ease-in-out shadow-sm
           ${collapsed ? "w-[72px]" : "w-[240px]"}
           ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
@@ -137,7 +137,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Top bar */}
-        <header className="h-16 flex items-center justify-between px-6 bg-white border-b border-gray-100 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
+        <header className="h-16 flex items-center justify-between px-6 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-[0_1px_4px_rgba(0,0,0,0.04)]">
           <div className="flex items-center gap-3">
             <button
               className="lg:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100"
