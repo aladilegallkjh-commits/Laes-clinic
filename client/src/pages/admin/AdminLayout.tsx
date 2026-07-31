@@ -202,6 +202,28 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
         {/* View content */}
         <main className="flex-1 overflow-y-auto p-6">
+          {/* ── Greeting Banner ── */}
+          {(() => {
+            const now = new Date();
+            const hour = now.getHours();
+            const greeting =
+              hour < 12 ? "Bom dia" : hour < 18 ? "Boa tarde" : "Boa noite";
+            const dateStr = now.toLocaleDateString("pt-BR", {
+              weekday: "long",
+              day: "numeric",
+              month: "long",
+            }).toUpperCase();
+            return (
+              <div className="mb-6 pb-5 border-b border-gray-200/60">
+                <p className="text-xs font-semibold text-gray-400 tracking-widest uppercase mb-1">
+                  {dateStr}
+                </p>
+                <h2 className="text-2xl font-bold text-[#1a3a2a]">
+                  {greeting}, Dra. Laís
+                </h2>
+              </div>
+            );
+          })()}
           {children(activeView)}
         </main>
       </div>
