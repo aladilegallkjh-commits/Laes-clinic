@@ -64,6 +64,79 @@ export default function DashboardView() {
         ))}
       </div>
 
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* Revenue Chart */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col">
+          <h3 className="font-semibold text-[#1a3a2a] mb-6 flex items-center gap-2">
+            <TrendingUp size={16} className="text-emerald-600" />
+            Faturamento (Últimos 7 dias)
+          </h3>
+          <div className="flex-1 flex items-end gap-2 h-48 mt-auto">
+            {[
+              { day: "Seg", value: 450 },
+              { day: "Ter", value: 890 },
+              { day: "Qua", value: 320 },
+              { day: "Qui", value: 1200 },
+              { day: "Sex", value: 1500 },
+              { day: "Sáb", value: 950 },
+              { day: "Dom", value: 0 },
+            ].map((d, i) => {
+              const max = 1500;
+              const pct = (d.value / max) * 100;
+              return (
+                <div key={i} className="flex-1 flex flex-col items-center gap-2 group">
+                  <div className="w-full relative flex-1 flex items-end bg-emerald-50/50 rounded-t-lg overflow-hidden">
+                    <div
+                      className="w-full bg-emerald-500 rounded-t-lg transition-all duration-700 group-hover:bg-emerald-400 relative"
+                      style={{ height: `${pct}%` }}
+                    >
+                      <div className="absolute -top-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap pointer-events-none">
+                        R$ {d.value}
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-[10px] text-gray-400 font-medium">{d.day}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Procedures Chart */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50 flex flex-col">
+          <h3 className="font-semibold text-[#1a3a2a] mb-6 flex items-center gap-2">
+            <Users size={16} className="text-blue-600" />
+            Procedimentos Populares
+          </h3>
+          <div className="flex-1 flex flex-col justify-center space-y-4">
+            {[
+              { name: "Botox (Terço Superior)", count: 24, color: "bg-blue-500" },
+              { name: "Preenchimento Labial", count: 18, color: "bg-purple-500" },
+              { name: "Bioestimulador de Colágeno", count: 12, color: "bg-emerald-500" },
+              { name: "Skinbooster", count: 8, color: "bg-orange-400" },
+            ].map((p, i) => {
+              const max = 24;
+              const pct = (p.count / max) * 100;
+              return (
+                <div key={i} className="w-full">
+                  <div className="flex items-center justify-between mb-1.5 text-xs">
+                    <span className="font-medium text-gray-700">{p.name}</span>
+                    <span className="font-bold text-gray-500">{p.count} pac.</span>
+                  </div>
+                  <div className="w-full bg-gray-100 rounded-full h-2">
+                    <div
+                      className={`h-2 rounded-full ${p.color} transition-all duration-700`}
+                      style={{ width: `${pct}%` }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
       {/* Today's appointments table */}
       <div className="bg-white rounded-2xl shadow-[0_1px_6px_rgba(0,0,0,0.06)] border border-gray-50">
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-50">
