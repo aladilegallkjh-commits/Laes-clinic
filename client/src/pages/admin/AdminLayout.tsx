@@ -224,10 +224,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             }).toUpperCase();
             return (
               <div className="mb-6 pb-5 border-b border-gray-200/60">
-                <p className="text-xs font-semibold text-gray-400 tracking-widest uppercase mb-1">
+                <p className="text-xs font-semibold text-gray-600 tracking-widest uppercase mb-1">
                   {dateStr}
                 </p>
-                <h2 className="text-2xl font-bold text-[#1a3a2a]">
+                <h2 className="text-2xl font-bold text-[#0d1f17]">
                   {greeting}, Dr Edilene
                 </h2>
               </div>
