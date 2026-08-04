@@ -67,7 +67,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-white/80">Curitiba - PR</span>
+                <span className="text-sm text-white/80" translate="no">Curitiba - <span translate="no">PR</span></span>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />

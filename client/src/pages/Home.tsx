@@ -411,11 +411,11 @@ export default function Home() {
       <div className="bg-primary text-primary-foreground">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 text-[11px] sm:px-6">
           <div className="flex min-w-0 flex-1 items-center gap-4 overflow-hidden sm:gap-5">
-            <span className="flex shrink-0 items-center gap-1.5">
-              <MapPin className="h-3.5 w-3.5 text-gold" /> Curitiba - PR
+            <span className="flex shrink-0 items-center gap-1.5" translate="no">
+              <MapPin className="h-3.5 w-3.5 text-gold" /> Curitiba - <span translate="no">PR</span>
             </span>
-            <span className="hidden shrink-0 items-center gap-1.5 sm:flex">
-              <Clock className="h-3.5 w-3.5 text-gold" /> Seg - Sex: 9h às 18h
+            <span className="hidden shrink-0 items-center gap-1.5 sm:flex" translate="no">
+              <Clock className="h-3.5 w-3.5 text-gold" /> Seg - <span translate="no">Sex</span>: 9h às 18h
             </span>
             <span className="hidden shrink-0 items-center gap-1.5 md:flex">
               <Phone className="h-3.5 w-3.5 text-gold" /> (41) 98422-1384
@@ -808,13 +808,13 @@ export default function Home() {
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gold" /> (41) 98422-1384
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-gold" /> Curitiba - PR
+              <li className="flex items-center gap-2" translate="no">
+                <MapPin className="h-4 w-4 text-gold" /> Curitiba - <span translate="no">PR</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-gold" /> Seg - Sex: 9h às 18h
+              <li className="flex items-center gap-2" translate="no">
+                <Clock className="h-4 w-4 text-gold" /> Seg - <span translate="no">Sex</span>: 9h às 18h
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2" translate="no">
                 <Instagram className="h-4 w-4 text-gold" /> @edilenelopes52
               </li>
             </ul>
