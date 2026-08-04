@@ -415,7 +415,7 @@ export default function Home() {
               <MapPin className="h-3.5 w-3.5 text-gold" /> Curitiba - <span translate="no">PR</span>
             </span>
             <span className="hidden shrink-0 items-center gap-1.5 sm:flex" translate="no">
-              <Clock className="h-3.5 w-3.5 text-gold" /> Seg - <span translate="no">Sex</span>: 9h às 18h
+              <Clock className="h-3.5 w-3.5 text-gold" /> Seg - <span translate="no">Sex</span>: 9h às 20h
             </span>
             <span className="hidden shrink-0 items-center gap-1.5 md:flex">
               <Phone className="h-3.5 w-3.5 text-gold" /> (41) 98422-1384
@@ -812,7 +812,7 @@ export default function Home() {
                 <MapPin className="h-4 w-4 text-gold" /> Curitiba - <span translate="no">PR</span>
               </li>
               <li className="flex items-center gap-2" translate="no">
-                <Clock className="h-4 w-4 text-gold" /> Seg - <span translate="no">Sex</span>: 9h às 18h
+                <Clock className="h-4 w-4 text-gold" /> Seg - <span translate="no">Sex</span>: 9h às 20h
               </li>
               <li className="flex items-center gap-2" translate="no">
                 <Instagram className="h-4 w-4 text-gold" /> @edilenelopes52
