@@ -600,10 +600,7 @@ export default function Home() {
               ))}
             </div>
 
-            <CtaButton href={WHATSAPP} variant="gold" className="mt-10">
-              CONHEÇA A DRA. EDILENE LOPES
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </CtaButton>
+
           </Reveal>
 
           <Reveal from="right" delay={120}>
@@ -749,7 +746,7 @@ export default function Home() {
           </div>
           <div className="mx-auto max-w-2xl rounded-3xl glass-strong p-10">
             <h2 className="font-serif text-3xl text-primary md:text-4xl">
-              Pronta para transformar sua pele
+              Pronto(a) para transformar sua pele
               <br className="hidden sm:block" /> e elevar sua autoestima?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground">
@@ -785,24 +782,6 @@ export default function Home() {
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-gold">
-              Links Rápidos
-            </h4>
-            <ul className="space-y-2 text-sm text-cream/80">
-              {navItems.map((n) => (
-                <li key={n.href}>
-                  <a
-                    href={n.href}
-                    className="inline-block transition-all hover:translate-x-1 hover:text-gold"
-                  >
-                    {n.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>

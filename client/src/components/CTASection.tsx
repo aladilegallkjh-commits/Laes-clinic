@@ -10,7 +10,7 @@ export default function CTASection() {
             <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
               <div className="space-y-3">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-                  Pronta para transformar sua pele e elevar sua autoestima?
+                  Pronto(a) para transformar sua pele e elevar sua autoestima?
                 </h2>
               </div>
 
